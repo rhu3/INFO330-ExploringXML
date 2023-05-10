@@ -25,7 +25,8 @@
 <!-- In this template, select all the pokemon that are fire, water, flying or ground -->
 <!--
 <xsl:template match="/pokedex">
-    <xsl:apply-templates select="XPATH-QUERY-GOES-HERE" />
+    <xsl:apply-templates select="//pokemon[type='fire' or type='water' or type='flying' or type='ground']
+" />
 </xsl:template>
  -->
 
@@ -33,7 +34,10 @@
      statements, respectively. -->
 <!-- 
 <xsl:template match="pokemon">
-    <xsl:value-of select="XPATH-QUERY-GOES-HERE" /> (<xsl:value-of select="XPATH-QUERY-GOES-HERE" />): <xsl:apply-templates select="XPATH-QUERY-GOES-HERE" /><xsl:text>
+    <xsl:value-of select="//pokemon[type='fire' or type='water' or type='flying' or type='ground']
+" /> (<xsl:value-of select="//pokemon[type='fire' or type='water' or type='flying' or type='ground']
+" />): <xsl:apply-templates select="//pokemon[type='fire' or type='water' or type='flying' or type='ground']
+" /><xsl:text>
 </xsl:text>
 </xsl:template>
 -->
@@ -47,7 +51,8 @@
   -->
 <!-- In this template, select all the pokemon that are fire, water, flying or ground -->
 <xsl:template match="/pokedex">
-  <xsl:variable name="pokemonResults" select="XPATH-QUERY-GOES-HERE" />
+  <xsl:variable name="pokemonResults" select="//pokemon[type='fire' or type='water' or type='flying' or type='ground']
+" />
 
   <html>
   <body>
@@ -68,8 +73,11 @@
      statements, respectively. -->
 <xsl:template match="pokemon">
     <tr>
-      <td><xsl:value-of select=".XPATH-QUERY-GOES-HERE" />(<xsl:value-of select="XPATH-QUERY-GOES-HERE" />)</td>
-      <td><xsl:apply-templates select="XPATH-QUERY-GOES-HERE" /></td>
+      <td><xsl:value-of select=".//pokemon[type='fire' or type='water' or type='flying' or type='ground']
+" />(<xsl:value-of select="//pokemon[type='fire' or type='water' or type='flying' or type='ground']
+" />)</td>
+      <td><xsl:apply-templates select="//pokemon[type='fire' or type='water' or type='flying' or type='ground']
+" /></td>
     </tr>
 </xsl:template>
 
